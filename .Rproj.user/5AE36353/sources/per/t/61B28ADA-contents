@@ -5,25 +5,25 @@ output: github_document
 
 Created by [Lucia Cerchie](https://cwiki.apache.org/confluence/display/~cerchie), last modified by [Matthias J. Sax](https://cwiki.apache.org/confluence/display/~mjsax) on [May 02, 2024](https://cwiki.apache.org/confluence/pages/diffpagesbyversion.action?pageId=290982804&selectedPageVersions=13&selectedPageVersions=14 "Show changes")
 
-[Status](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-Status)
+[Status](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-Status)
 
--   [Motivation](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-Motivation)
+-   [Motivation](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-Motivation)
 
--   [Public Interfaces](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-PublicInterfaces)
+-   [Public Interfaces](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-PublicInterfaces)
 
--   [Proposed Changes](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-ProposedChanges)
+-   [Proposed Changes](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-ProposedChanges)
 
--   [Compatibility, Deprecation, and Migration Plan](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-Compatibility,Deprecation,andMigrationPlan)
+-   [Compatibility, Deprecation, and Migration Plan](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-Compatibility,Deprecation,andMigrationPlan)
 
--   [Test Plan](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-TestPlan)
+-   [Test Plan](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-TestPlan)
 
--   [Rejected Alternatives](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move`window.size.ms`and`windowed.inner.serde.class`from`StreamsConfig`toTimeWindowedDe/Serializerclass-RejectedAlternatives)
+-   [Rejected Alternatives](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=290982804#KIP1020:Move%60window.size.ms%60and%60windowed.inner.serde.class%60from%60StreamsConfig%60toTimeWindowedDe/Serializerclass-RejectedAlternatives)
 
 # Status
 
 **Current state**: *Accepted*
 
-**Discussion thread**: [*here*](http://mail-archives.apache.org/mod_mbox/kafka-dev/201501.mbox/%3CCAOeJiJh6Vkkca85bWYgkeOZ8rC6%2BKDh7zzq8vMKECL_7PNExTA%40mail.gmail.com%3E)[](https://lists.apache.org/list.html?dev@kafka.apache.org)*\
+**Discussion thread**: [*here*](http://mail-archives.apache.org/mod_mbox/kafka-dev/201501.mbox/%3CCAOeJiJh6Vkkca85bWYgkeOZ8rC6%2BKDh7zzq8vMKECL_7PNExTA%40mail.gmail.com%3E)[ ](https://lists.apache.org/list.html?dev@kafka.apache.org)*\
 *
 
 **JIRA**: [*here*](https://issues.apache.org/jira/projects/KAFKA/issues/KAFKA-16260?filter=allissues) *\
@@ -63,8 +63,6 @@ In TimeWindowedDeserializer:
 | `public` `static` `final` `String WINDOW_SIZE_MS_CONFIG = "window.size.ms";`                                                                                       |
 |                                                                                                                                                                    |
 | `private` `static` `final` `String WINDOW_SIZE_MS_DOC = "Sets window size for the deserializer in order to calculate window end times.";`                          |
-|                                                                                                                                                                    |
-|                                                                                                                                                                    |
 |                                                                                                                                                                    |
 | `public` `static` `final` `String WINDOWED_INNER_DESERIALIZER_CLASS = "windowed.inner.deserializer.class"";`                                                       |
 |                                                                                                                                                                    |
@@ -127,9 +125,7 @@ If both are specified, the new piece of config takes preference. 
 
 -   *Deprecating it in `StreamsConfig`  shouldn't impact current users negatively other than them seeing a warning when they use it in KStreams.*
 
--   *We
-    should change the config docs first to deprecate. In the future, moving
-    the configuration to ClientConfig could be called for. See <https://github.com/apache/kafka/pull/14360> for a PR in progress, as well as a discussion of this issue.*
+-   *We should change the config docs first to deprecate. In the future, moving the configuration to ClientConfig could be called for. See <https://github.com/apache/kafka/pull/14360> for a PR in progress, as well as a discussion of this issue.*
 
 -   *Post docs change and deprecation, for major release 5. Deprecation itself can be for next minor release.*
 

@@ -3,7 +3,7 @@
     "path": "~/NetBeansProjects/QSJKip1020/README.Rmd",
     "project_path": "README.Rmd",
     "type": "r_markdown",
-    "hash": "4173163809",
+    "hash": "2618031680",
     "contents": "",
     "dirty": false,
     "created": 1715848409795.0,
@@ -19,14 +19,14 @@
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "14:0"
+        "rmdVisualModeLocation": "163:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1715848587,
+    "lastKnownWriteTime": 1715855490,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1715848587135,
+    "last_content_update": 1715855490443,
     "read_only": false,
     "read_only_alternatives": []
 }
